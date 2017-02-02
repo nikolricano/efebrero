@@ -26,7 +26,7 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @gallery = Gallery.create(image_1: params[:image][:image_1], image_2: params[:image][:image_2])
-    @image = Image.create(name: params[:image][:name], quantity: params[:image][:quantity], description: params[:image][:description], created_at: params[:image][:created_at], gallery: @gallery)
+    @image = Image.create(name: params[:image][:name], quantity: params[:image][:quantity], description: params[:image][:description], gallery: @gallery)
 
     respond_to do |format|
       if @image.save
